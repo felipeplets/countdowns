@@ -3,10 +3,6 @@ var days, hours, minutes, seconds; // variables for time units
 
 var countdown = document.getElementById("tiles"); // get tag element
 
-getCountdown();
-
-setInterval(function () { getCountdown(); }, 1000);
-
 function getCountdown(){
 
 	// find the amount of "seconds" between now and target
@@ -30,3 +26,8 @@ function pad(n) {
 	return (n < 10 ? '0' : '') + n;
 }
 
+
+window.onload = () => {
+    getCountdown()
+    setInterval(getCountdown, 1000);
+}
